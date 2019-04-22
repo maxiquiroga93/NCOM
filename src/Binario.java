@@ -1,5 +1,4 @@
 
-
 public class Binario implements Complejo{
 
 	//Parte real de un numero complejo binario
@@ -79,7 +78,6 @@ public class Binario implements Complejo{
 		if(real>=0 && imaginaria<=0) {
 			return 4;
 		}
-		//Quiere decir que cayo en un eje
 		return 0;
 	}
 	
