@@ -150,7 +150,7 @@ public class OperacionesBasicas {
 		btnSumar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
-				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				final Complejo complejoDos = radioSegundoNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
 				if(complejoUno != null && complejoDos != null) {
 					final Complejo suma = complejoUno.sumar(complejoDos);
 					rtaBinomica.setText(suma.aBinario().toString());
@@ -168,7 +168,7 @@ public class OperacionesBasicas {
 		btnRestar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
-				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				final Complejo complejoDos = radioSegundoNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
 				if(complejoUno != null && complejoDos != null) {
 					final Complejo diferencia = complejoUno.restar(complejoDos);
 					rtaBinomica.setText(diferencia.aBinario().toString());
@@ -187,7 +187,7 @@ public class OperacionesBasicas {
 		btnMultiplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
-				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				final Complejo complejoDos = radioSegundoNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
 				if(complejoUno != null && complejoDos != null) {
 					final Complejo producto = complejoUno.multiplicar(complejoDos);
 					rtaBinomica.setText(producto.aBinario().toString());
@@ -204,7 +204,7 @@ public class OperacionesBasicas {
 		btnDividir.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
-				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				final Complejo complejoDos = radioSegundoNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
 				if(complejoUno != null && complejoDos != null) {
 					final Complejo cociente = complejoUno.dividir(complejoDos);
 					if(cociente != null) {
