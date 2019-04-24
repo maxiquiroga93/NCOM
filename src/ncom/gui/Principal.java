@@ -14,19 +14,19 @@ public class Principal {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(final String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					final Principal window = new Principal();
-//					window.frame.setSize(1200, 600);
-//					window.frame.setVisible(true);
-//				} catch (final Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(final String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					final Principal window = new Principal();
+					window.frame.setSize(1200, 600);
+					window.frame.setVisible(true);
+				} catch (final Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.

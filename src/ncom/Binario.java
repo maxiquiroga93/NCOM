@@ -23,6 +23,11 @@ public class Binario implements Complejo{
 		System.out.println("El numero binario es: "+ real + "+" + imaginaria + "j");
 	}
 	
+	@Override
+	public String toString() {
+		return Utils.trimear(real) + " + " + Utils.trimear(imaginaria) + "i";
+	}
+	
 	//Se devuelve a sí mismo.
 	public Binario aBinario() {
 		return this;
@@ -36,7 +41,7 @@ public class Binario implements Complejo{
 		final double modulo = Math.sqrt(Math.pow(real,2)+Math.pow(imaginaria,2));
 		
 		//Argumento de un numero complejo arctg(b/a)
-		double argumento = Math.atan(imaginaria/real);
+		double argumento = real != 0 ? Math.atan(imaginaria/real) : 0;
 		
 		//Se corrige el argumento dependiendo del cuadrante y se corrige al primer giro positivo
 		//en caso de que sea mayor a 2pi o menor a 0
@@ -139,7 +144,8 @@ public class Binario implements Complejo{
 	@Override
 	public Complejo dividir(final Complejo divisor) {
 		final Polar polar = new Polar(this);
-		return new Binario((Polar) polar.dividir(divisor));
+		final Complejo cociente = polar.dividir(divisor);
+		return cociente == null ? cociente : new Binario((Polar) cociente);
 	}
 	
 }

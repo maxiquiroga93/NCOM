@@ -10,32 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import ncom.Binario;
+import ncom.Complejo;
+import ncom.Polar;
+	
 public class OperacionesBasicas {
 
 	public static JPanel crearPanel() {
 		final JPanel panel =new JPanel();
 		panel.setLayout(null);
 			
-		final JButton btnSumar = new JButton(Textos.SUMA);
-		btnSumar.setBounds(10, 190, 46, 23);
-		panel.add(btnSumar);
-		
-		final JButton btnRestar = new JButton(Textos.RESTA);
-		btnRestar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnRestar.setBounds(66, 190, 46, 23);
-		panel.add(btnRestar);
-		
-		final JButton btnMultiplicar = new JButton(Textos.PRODUCTO);
-		btnMultiplicar.setBounds(122, 190, 46, 23);
-		panel.add(btnMultiplicar);
-		
-		final JButton btnDividir = new JButton(Textos.COCIENTE);
-		btnDividir.setBounds(178, 190, 46, 23);
-		panel.add(btnDividir);
-		
 		final JTextField textoPrimerNumeroBinomicaReal = new JTextField();
 		textoPrimerNumeroBinomicaReal.setBounds(36, 41, 49, 20);
 		panel.add(textoPrimerNumeroBinomicaReal);
@@ -72,7 +56,7 @@ public class OperacionesBasicas {
 		
 		final ButtonGroup radioPrimerNumero = new ButtonGroup();    
 		radioPrimerNumero.add(radioPrimerNumeroBinomica);
-		radioPrimerNumero.add(radioPrimerNumeroPolar); 
+		radioPrimerNumero.add(radioPrimerNumeroPolar);
 		
 		final JTextField textoPrimerNumeroPolarModulo = new JTextField();
 		textoPrimerNumeroPolarModulo.setColumns(10);
@@ -162,6 +146,83 @@ public class OperacionesBasicas {
 		rtaBinomica.setEditable(false);
 		rtaPolar.setEditable(false);
 		
+		final JButton btnSumar = new JButton(Textos.SUMA);
+		btnSumar.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent arg0) {
+				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
+				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				if(complejoUno != null && complejoDos != null) {
+					final Complejo suma = complejoUno.sumar(complejoDos);
+					rtaBinomica.setText(suma.aBinario().toString());
+					rtaPolar.setText(suma.aPolar().toString());
+				} else {
+					rtaBinomica.setText("ERROR");
+					rtaPolar.setText("ERROR");
+				}
+			}
+		});
+		btnSumar.setBounds(10, 190, 46, 23);
+		panel.add(btnSumar);
+		
+		final JButton btnRestar = new JButton(Textos.RESTA);
+		btnRestar.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent arg0) {
+				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
+				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				if(complejoUno != null && complejoDos != null) {
+					final Complejo diferencia = complejoUno.restar(complejoDos);
+					rtaBinomica.setText(diferencia.aBinario().toString());
+					rtaPolar.setText(diferencia.aPolar().toString());
+				} else {
+					rtaBinomica.setText("ERROR");
+					rtaPolar.setText("ERROR");
+				}
+			}
+		});
+		btnRestar.setBounds(66, 190, 46, 23);
+		panel.add(btnRestar);
+		
+		final JButton btnMultiplicar = new JButton(Textos.PRODUCTO);
+		btnMultiplicar.setBounds(122, 190, 46, 23);
+		btnMultiplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent arg0) {
+				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
+				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				if(complejoUno != null && complejoDos != null) {
+					final Complejo producto = complejoUno.multiplicar(complejoDos);
+					rtaBinomica.setText(producto.aBinario().toString());
+					rtaPolar.setText(producto.aPolar().toString());
+				} else {
+					rtaBinomica.setText("ERROR");
+					rtaPolar.setText("ERROR");
+				}
+			}
+		});
+		panel.add(btnMultiplicar);
+		
+		final JButton btnDividir = new JButton(Textos.COCIENTE);
+		btnDividir.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent arg0) {
+				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
+				final Complejo complejoDos = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria) : crearPolar(textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+				if(complejoUno != null && complejoDos != null) {
+					final Complejo cociente = complejoUno.dividir(complejoDos);
+					if(cociente != null) {
+						rtaBinomica.setText(cociente.aBinario().toString());
+						rtaPolar.setText(cociente.aPolar().toString());
+					} else {
+						rtaBinomica.setText("ERROR DIV/0");
+						rtaPolar.setText("ERROR DIV/0");
+					}
+				} else {
+					rtaBinomica.setText("ERROR");
+					rtaPolar.setText("ERROR");
+				}
+			}
+		});
+		btnDividir.setBounds(178, 190, 46, 23);
+		panel.add(btnDividir);
+		
 		return panel;
 	}
 	
@@ -175,6 +236,32 @@ public class OperacionesBasicas {
 	        	textoDosADeshabilitar.setEditable(false);
 	        }
 	    });
+	}
+	
+	private static Binario crearBinario(final JTextField real, final JTextField imaginario) {
+		try{
+			final String textoReal = real.getText().trim();
+			final String textoImaginario = imaginario.getText().trim();
+			final Double parteReal = Double.parseDouble(textoReal.isEmpty() ? "0" : textoReal);
+			final Double parteImaginaria = Double.parseDouble(textoImaginario.isEmpty() ? "0" : textoImaginario);
+			return new Binario(parteReal, parteImaginaria);
+		} catch(final NullPointerException|NumberFormatException e) {
+			System.out.println("Error al leer el numero ingresado en forma binomica");
+		}
+		return null;
+	}
+	
+	private static Polar crearPolar(final JTextField modulo, final JTextField fase) {
+		try{
+			final String textoModulo = modulo.getText().trim();
+			final String textoFase = fase.getText().trim();
+			final Double parteModulo = Double.parseDouble(textoModulo.isEmpty() ? "0" : textoModulo);
+			final Double parteFase = Double.parseDouble(textoFase.isEmpty() ? "0" : textoFase);
+			return new Polar(parteModulo,parteFase);
+		} catch(final NullPointerException|NumberFormatException e) {
+			System.out.println("Error al leer el numero ingresado en forma polar");
+		}
+		return null;
 	}
 	
 }

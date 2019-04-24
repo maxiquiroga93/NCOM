@@ -20,6 +20,11 @@ public class Polar implements Complejo {
 		System.out.println("El numero polar es: ["+ modulo + ";" + argumento + "]");
 	}
 	
+	@Override
+	public String toString() {
+		return "[" + Utils.trimear(modulo) + ";" + Utils.trimear(argumento) + "]";
+	}
+	
 	public Polar aPolar() {
 		return this;
 	}
@@ -65,6 +70,9 @@ public class Polar implements Complejo {
 	@Override
 	public Complejo dividir(final Complejo divisor) {
 		final Polar divisorPolar = divisor instanceof Polar ? (Polar) divisor : new Polar((Binario) divisor);
+		if(divisorPolar.getModulo() == 0) {
+			return null;
+		}
 		return new Polar(this.modulo / divisorPolar.getModulo(), this.argumento - divisorPolar.getArgumento());
 	}
 
