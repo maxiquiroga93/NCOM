@@ -76,4 +76,13 @@ public class Polar implements Complejo {
 		return new Polar(this.modulo / divisorPolar.getModulo(), this.argumento - divisorPolar.getArgumento());
 	}
 
+	@Override
+	public Complejo elevarA(final Integer exponente) {
+		return this;//TODO
+	}
+	
+	@Override
+	public Complejo raiz(final Integer indice) {
+		return this;//TODO
+	}
 }

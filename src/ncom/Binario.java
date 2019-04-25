@@ -148,4 +148,14 @@ public class Binario implements Complejo{
 		return cociente == null ? cociente : new Binario((Polar) cociente);
 	}
 	
+	@Override
+	public Complejo elevarA(final Integer exponente) {
+		return this;//TODO
+	}
+	
+	@Override
+	public Complejo raiz(final Integer indice) {
+		return this;//TODO
+	}
+	
 }

@@ -46,7 +46,7 @@ public class OperacionesBasicas {
 		textoPrimerNumeroBinomicaImaginaria.setBounds(109, 41, 49, 20);
 		panel.add(textoPrimerNumeroBinomicaImaginaria);
 		
-		final JLabel lblMasI1 = new JLabel("+ i");
+		final JLabel lblMasI1 = new JLabel(Textos.MAS_I);
 		lblMasI1.setBounds(90, 43, 20, 17);
 		panel.add(lblMasI1);
 		
