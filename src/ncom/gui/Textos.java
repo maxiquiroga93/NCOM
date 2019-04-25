@@ -12,16 +12,27 @@ public class Textos {
 	
 	public static String PRIMER_OPERANDO = "Primer operando";
 	public static String SEGUNDO_OPERANDO = "Segundo operando";
+	public static String RESULTADO = "Resultado";
+	
 	public static String BASE = "Base";
 	public static String EXPONENTE = "Exponente";
 	public static String RADICANDO = "Radicando";
 	public static String INDICE = "Indice";
+	
+	public static String PRIMERA_FUNCION = "Primera funcion sinusoidal";
+	public static String SEGUNDA_FUNCION = "Segunda funcion sinusoidal";
+	
+	public static String SENO = "sen";
+	public static String COSENO = "cos";
 	
 	public static String MODULO = "Mod";
 	public static String FASE = "Fase";
 	public static String MAS_I = "+ i";
 	
 	public static String BARRA = " / ";
+	public static String ABRE_PARENTESIS = "(";
+	public static String CIERRA_PARENTESIS = ")";
+	public static String T_MAS = "t + ";
 	
 	public static String SUMA = "+";
 	public static String RESTA = "-";
