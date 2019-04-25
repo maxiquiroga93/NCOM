@@ -150,12 +150,14 @@ public class Binario implements Complejo{
 	
 	@Override
 	public Complejo elevarA(final Integer exponente) {
-		return this;//TODO
+		final Polar polar = new Polar(this);
+		return new Binario((Polar) polar.elevarA(exponente));
 	}
 	
 	@Override
 	public Complejo raiz(final Integer indice) {
-		return this;//TODO
+		final Polar polar = new Polar(this);
+		return new Binario((Polar) polar.raiz(indice));
 	}
 	
 }

@@ -78,11 +78,20 @@ public class Polar implements Complejo {
 
 	@Override
 	public Complejo elevarA(final Integer exponente) {
-		return this;//TODO
+		return new Polar(Math.pow(this.modulo, exponente), corregirArgumento(this.argumento * exponente));
 	}
 	
 	@Override
 	public Complejo raiz(final Integer indice) {
 		return this;//TODO
 	}
+	
+	private Double corregirArgumento(final Double argumento) {
+		Double arg = argumento;
+		while(arg >= 2*Math.PI) {
+			arg = argumento - 2*Math.PI;
+		}
+		return arg;
+	}
+	
 }
