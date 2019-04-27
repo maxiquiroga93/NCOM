@@ -19,134 +19,143 @@ public class OperacionesBasicas {
 	public static JPanel crearPanel() {
 		final JPanel panel =new JPanel();
 		panel.setLayout(null);
-			
-		final JTextField textoPrimerNumeroBinomicaReal = new JTextField();
-		textoPrimerNumeroBinomicaReal.setBounds(36, 41, 49, 20);
-		panel.add(textoPrimerNumeroBinomicaReal);
-		textoPrimerNumeroBinomicaReal.setColumns(10);
-		final JRadioButton radioPrimerNumeroBinomica = new JRadioButton("",true);
-		radioPrimerNumeroBinomica.setBounds(10, 38, 20, 23);
+		
+		final JLabel lblPrimerOperando = new JLabel(Textos.PRIMER_OPERANDO);
+		lblPrimerOperando.setBounds(10, 15, 160, 15);
+		panel.add(lblPrimerOperando);
+
+		final JRadioButton radioPrimerNumeroBinomica = new JRadioButton();
+		radioPrimerNumeroBinomica.setBounds(10, 40, 20, 20);
 		panel.add(radioPrimerNumeroBinomica);
 		
-		final JTextField textoPrimerNumeroPolarFase = new JTextField();
-		textoPrimerNumeroPolarFase.setColumns(10);
-		textoPrimerNumeroPolarFase.setBounds(150, 72, 86, 20);
-		panel.add(textoPrimerNumeroPolarFase);
-
-		final JLabel lblBinomica = new JLabel(Textos.BINOMICA);
-		lblBinomica.setBounds(10, 226, 46, 17);
-		panel.add(lblBinomica);
-		final JTextField rtaBinomica = new JTextField();
-		rtaBinomica.setColumns(10);
-		rtaBinomica.setBounds(62, 224, 162, 20);
-		panel.add(rtaBinomica);
-
-		final JTextField textoPrimerNumeroBinomicaImaginaria = new JTextField();
-		textoPrimerNumeroBinomicaImaginaria.setColumns(10);
-		textoPrimerNumeroBinomicaImaginaria.setBounds(109, 41, 49, 20);
-		panel.add(textoPrimerNumeroBinomicaImaginaria);
+		final JTextField textoPrimerNumeroBinomicaReal = new JTextField();
+		textoPrimerNumeroBinomicaReal.setBounds(30, 40, 50, 20);
+		textoPrimerNumeroBinomicaReal.setColumns(10);
+		panel.add(textoPrimerNumeroBinomicaReal);
 		
 		final JLabel lblMasI1 = new JLabel(Textos.MAS_I);
-		lblMasI1.setBounds(90, 43, 20, 17);
+		lblMasI1.setBounds(85, 40, 20, 20);
 		panel.add(lblMasI1);
 		
-		final JRadioButton radioPrimerNumeroPolar = new JRadioButton("");
-		radioPrimerNumeroPolar.setBounds(10, 72, 20, 23);
-		panel.add(radioPrimerNumeroPolar);
+		final JTextField textoPrimerNumeroBinomicaImaginaria = new JTextField();
+		textoPrimerNumeroBinomicaImaginaria.setColumns(10);
+		textoPrimerNumeroBinomicaImaginaria.setBounds(105, 40, 50, 20);
+		panel.add(textoPrimerNumeroBinomicaImaginaria);
 		
-		final ButtonGroup radioPrimerNumero = new ButtonGroup();    
-		radioPrimerNumero.add(radioPrimerNumeroBinomica);
-		radioPrimerNumero.add(radioPrimerNumeroPolar);
+		final JRadioButton radioPrimerNumeroPolar = new JRadioButton();
+		radioPrimerNumeroPolar.setBounds(10, 70, 20, 20);
+		panel.add(radioPrimerNumeroPolar);
+
+		final JLabel lblMod1 = new JLabel(Textos.MODULO);
+		lblMod1.setBounds(30, 70, 30, 20);
+		panel.add(lblMod1);
 		
 		final JTextField textoPrimerNumeroPolarModulo = new JTextField();
 		textoPrimerNumeroPolarModulo.setColumns(10);
-		textoPrimerNumeroPolarModulo.setBounds(61, 72, 49, 20);
+		textoPrimerNumeroPolarModulo.setBounds(60, 70, 50, 20);
 		panel.add(textoPrimerNumeroPolarModulo);
-		
-		final JLabel lblPrimerOperando = new JLabel(Textos.PRIMER_OPERANDO);
-		lblPrimerOperando.setBounds(10, 14, 89, 14);
-		panel.add(lblPrimerOperando);
-		
-		final JLabel lblMod1 = new JLabel(Textos.MODULO);
-		lblMod1.setBounds(36, 72, 38, 23);
-		panel.add(lblMod1);
-		
 		final JLabel lblFase1 = new JLabel(Textos.FASE);
-		lblFase1.setBounds(119, 72, 28, 23);
+		lblFase1.setBounds(120, 70, 30, 20);
 		panel.add(lblFase1);
 		
+		final JTextField textoPrimerNumeroPolarFase = new JTextField();
+		textoPrimerNumeroPolarFase.setColumns(10);
+		textoPrimerNumeroPolarFase.setBounds(150, 70, 50, 20);
+		panel.add(textoPrimerNumeroPolarFase);
+
+		final ButtonGroup radioPrimerNumero = new ButtonGroup();    
+		radioPrimerNumero.add(radioPrimerNumeroBinomica);
+		radioPrimerNumero.add(radioPrimerNumeroPolar);
+
 		final JLabel lblSegundoOperando = new JLabel(Textos.SEGUNDO_OPERANDO);
-		lblSegundoOperando.setBounds(10, 102, 111, 14);
+		lblSegundoOperando.setBounds(10, 115, 160, 15);
 		panel.add(lblSegundoOperando);
 		
-		final JRadioButton radioSegundoNumeroBinomica = new JRadioButton("",true);
-		radioSegundoNumeroBinomica.setBounds(10, 126, 20, 23);
+		final JRadioButton radioSegundoNumeroBinomica = new JRadioButton();
+		radioSegundoNumeroBinomica.setBounds(10, 140, 20, 20);
 		panel.add(radioSegundoNumeroBinomica);
 		
 		final JTextField textoSegundoNumeroBinomicaReal = new JTextField();
 		textoSegundoNumeroBinomicaReal.setColumns(10);
-		textoSegundoNumeroBinomicaReal.setBounds(36, 129, 49, 20);
+		textoSegundoNumeroBinomicaReal.setBounds(30, 140, 50, 20);
 		panel.add(textoSegundoNumeroBinomicaReal);
 		
 		final JLabel lblMasI2 = new JLabel(Textos.MAS_I);
-		lblMasI2.setBounds(90, 131, 20, 17);
+		lblMasI2.setBounds(85, 140, 20, 20);
 		panel.add(lblMasI2);
 		
 		final JTextField textoSegundoNumeroBinomicaImaginaria = new JTextField();
 		textoSegundoNumeroBinomicaImaginaria.setColumns(10);
-		textoSegundoNumeroBinomicaImaginaria.setBounds(109, 129, 49, 20);
+		textoSegundoNumeroBinomicaImaginaria.setBounds(105, 140, 50, 20);
 		panel.add(textoSegundoNumeroBinomicaImaginaria);
 		
-		final JTextField textoSegundoNumeroPolarFase = new JTextField();
-		textoSegundoNumeroPolarFase.setColumns(10);
-		textoSegundoNumeroPolarFase.setBounds(150, 160, 86, 20);
-		panel.add(textoSegundoNumeroPolarFase);
+		final JRadioButton radioSegundoNumeroPolar = new JRadioButton();
+		radioSegundoNumeroPolar.setBounds(10, 170, 20, 20);
+		panel.add(radioSegundoNumeroPolar);
 		
-		final JLabel lblFase2 = new JLabel(Textos.FASE);
-		lblFase2.setBounds(119, 160, 28, 23);
-		panel.add(lblFase2);
+		final JLabel lblMod2 = new JLabel(Textos.MODULO);
+		lblMod2.setBounds(30, 170, 30, 20);
+		panel.add(lblMod2);
 		
 		final JTextField textoSegundoNumeroPolarModulo = new JTextField();
 		textoSegundoNumeroPolarModulo.setColumns(10);
-		textoSegundoNumeroPolarModulo.setBounds(61, 160, 49, 20);
+		textoSegundoNumeroPolarModulo.setBounds(60, 170, 50, 20);
 		panel.add(textoSegundoNumeroPolarModulo);
 		
-		final JLabel lblMod2 = new JLabel(Textos.MODULO);
-		lblMod2.setBounds(36, 160, 38, 23);
-		panel.add(lblMod2);
+		final JLabel lblFase2 = new JLabel(Textos.FASE);
+		lblFase2.setBounds(120, 170, 30, 20);
+		panel.add(lblFase2);
 		
-		final JRadioButton radioSegundoNumeroPolar = new JRadioButton("");
-		radioSegundoNumeroPolar.setBounds(10, 160, 20, 23);
-		panel.add(radioSegundoNumeroPolar);
-		agregarListenerClickRadio(radioSegundoNumeroBinomica,textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria,textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
+		final JTextField textoSegundoNumeroPolarFase = new JTextField();
+		textoSegundoNumeroPolarFase.setColumns(10);
+		textoSegundoNumeroPolarFase.setBounds(150, 170, 50, 20);
+		panel.add(textoSegundoNumeroPolarFase);
 		
 		final ButtonGroup radioSegundoNumero = new ButtonGroup();    
 		radioSegundoNumero.add(radioSegundoNumeroBinomica);
 		radioSegundoNumero.add(radioSegundoNumeroPolar); 
 		
-		final JTextField rtaPolar = new JTextField();
-		rtaPolar.setColumns(10);
-		rtaPolar.setBounds(62, 249, 162, 20);
-		panel.add(rtaPolar);
+		final JButton btnSumar = new JButton(Textos.SUMA);
+		btnSumar.setBounds(10, 210, 45, 25);
+		panel.add(btnSumar);
+		
+		final JButton btnRestar = new JButton(Textos.RESTA);
+		btnRestar.setBounds(60, 210, 45, 25);
+		panel.add(btnRestar);
+		
+		final JButton btnMultiplicar = new JButton(Textos.PRODUCTO);
+		btnMultiplicar.setBounds(110, 210, 45, 25);
+		panel.add(btnMultiplicar);
+		
+		final JButton btnDividir = new JButton(Textos.COCIENTE);
+		btnDividir.setBounds(160, 210, 45, 25);
+		panel.add(btnDividir);
+		
+		final JLabel lblResultado = new JLabel(Textos.RESULTADO);
+		lblResultado.setBounds(10, 250, 100, 25);
+		panel.add(lblResultado);
+		
+		final JLabel lblBinomica = new JLabel(Textos.BINOMICA);
+		lblBinomica.setBounds(10, 280, 70, 25);
+		panel.add(lblBinomica);
+		
+		final JLabel rtaBinomica = new JLabel();
+		rtaBinomica.setBounds(80, 280, 100, 25);
+		panel.add(rtaBinomica);
 		
 		final JLabel lblPolar = new JLabel(Textos.POLAR);
-		lblPolar.setBounds(10, 252, 46, 17);
+		lblPolar.setBounds(10, 310, 70, 25);
 		panel.add(lblPolar);
+		
+		final JLabel rtaPolar = new JLabel();
+		rtaPolar.setBounds(80, 310, 100, 25);
+		panel.add(rtaPolar);
 		
 		agregarListenerClickRadio(radioPrimerNumeroBinomica,textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria,textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
 		agregarListenerClickRadio(radioPrimerNumeroPolar,textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase,textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria);
 		agregarListenerClickRadio(radioSegundoNumeroBinomica,textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria,textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase);
 		agregarListenerClickRadio(radioSegundoNumeroPolar,textoSegundoNumeroPolarModulo,textoSegundoNumeroPolarFase,textoSegundoNumeroBinomicaReal,textoSegundoNumeroBinomicaImaginaria);
-		
-		textoPrimerNumeroPolarModulo.setEditable(false);
-		textoPrimerNumeroPolarFase.setEditable(false);
-		textoSegundoNumeroPolarModulo.setEditable(false);
-		textoSegundoNumeroPolarFase.setEditable(false);
-		
-		rtaBinomica.setEditable(false);
-		rtaPolar.setEditable(false);
-		
-		final JButton btnSumar = new JButton(Textos.SUMA);
+
 		btnSumar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
@@ -161,10 +170,7 @@ public class OperacionesBasicas {
 				}
 			}
 		});
-		btnSumar.setBounds(10, 190, 46, 23);
-		panel.add(btnSumar);
 		
-		final JButton btnRestar = new JButton(Textos.RESTA);
 		btnRestar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
@@ -179,11 +185,7 @@ public class OperacionesBasicas {
 				}
 			}
 		});
-		btnRestar.setBounds(66, 190, 46, 23);
-		panel.add(btnRestar);
 		
-		final JButton btnMultiplicar = new JButton(Textos.PRODUCTO);
-		btnMultiplicar.setBounds(122, 190, 46, 23);
 		btnMultiplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
@@ -198,9 +200,7 @@ public class OperacionesBasicas {
 				}
 			}
 		});
-		panel.add(btnMultiplicar);
 		
-		final JButton btnDividir = new JButton(Textos.COCIENTE);
 		btnDividir.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo complejoUno = radioPrimerNumeroBinomica.isSelected() ?  crearBinario(textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria) : crearPolar(textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);
@@ -220,8 +220,9 @@ public class OperacionesBasicas {
 				}
 			}
 		});
-		btnDividir.setBounds(178, 190, 46, 23);
-		panel.add(btnDividir);
+		
+		radioPrimerNumeroBinomica.doClick();
+		radioSegundoNumeroBinomica.doClick();
 		
 		return panel;
 	}
