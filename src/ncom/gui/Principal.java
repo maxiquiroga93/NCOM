@@ -19,7 +19,7 @@ public class Principal {
 			public void run() {
 				try {
 					final Principal window = new Principal();
-					window.frame.setSize(1200, 600);
+					window.frame.setSize(300, 450);
 					window.frame.setVisible(true);
 				} catch (final Exception e) {
 					e.printStackTrace();
