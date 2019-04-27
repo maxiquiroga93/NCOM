@@ -108,9 +108,6 @@ public class OperacionesAvanzadas {
 		agregarListenerClickRadio(radioBaseBinomica,textoBaseBinomicaReal,textoBaseBinomicaImaginaria,textoBasePolarModulo,textoBasePolarFase);
 		agregarListenerClickRadio(radioBasePolar,textoBasePolarModulo,textoBasePolarFase,textoBaseBinomicaReal,textoBaseBinomicaImaginaria);
 		
-		textoBasePolarModulo.setEditable(false);
-		textoBasePolarFase.setEditable(false);
-		
 		btnElevar.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent arg0) {
 				final Complejo base = radioBaseBinomica.isSelected() ?  crearBinario(textoBaseBinomicaReal,textoBaseBinomicaImaginaria) : crearPolar(textoBasePolarModulo,textoBasePolarFase);
@@ -146,13 +143,15 @@ public class OperacionesAvanzadas {
 			}
 		});
 		
+		radioBaseBinomica.doClick();
+		
 		return panel;
 	}
 	
 	private static void agregarListenerClickRadio(final JRadioButton btn, final JTextField textoUnoAHabilitar, final JTextField textoDosAHabilitar, final JTextField textoUnoADeshabilitar, final JTextField textoDosADeshabilitar){
 		btn.addActionListener(new ActionListener() {
 	        @Override
-	        public void actionPerformed(ActionEvent e) {
+	        public void actionPerformed(final ActionEvent e) {
 	        	textoUnoAHabilitar.setEditable(true);
 	        	textoDosAHabilitar.setEditable(true);
 	        	textoUnoADeshabilitar.setEditable(false);

@@ -231,7 +231,7 @@ public class OperacionesBasicas {
 	private static void agregarListenerClickRadio(final JRadioButton btn, final JTextField textoUnoAHabilitar, final JTextField textoDosAHabilitar, final JTextField textoUnoADeshabilitar, final JTextField textoDosADeshabilitar){
 		btn.addActionListener(new ActionListener() {
 	        @Override
-	        public void actionPerformed(ActionEvent e) {
+	        public void actionPerformed(final ActionEvent e) {
 	        	textoUnoAHabilitar.setEditable(true);
 	        	textoDosAHabilitar.setEditable(true);
 	        	textoUnoADeshabilitar.setEditable(false);

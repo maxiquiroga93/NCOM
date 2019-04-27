@@ -2,44 +2,44 @@ package ncom.gui;
 
 public class Textos {
 
-	public static String CONVERTIR = "Convertir formatos";
-	public static String OPERACIONES_BASICAS = "Operaciones básicas";
-	public static String OPERACIONES_AVANZADAS = "Operaciones avanzadas";
-	public static String SUMA_FASORES = "Sumar fasores";
+	public static final String CONVERTIR = "Convertir formatos";
+	public static final String OPERACIONES_BASICAS = "Operaciones básicas";
+	public static final String OPERACIONES_AVANZADAS = "Operaciones avanzadas";
+	public static final String SUMA_FASORES = "Sumar fasores";
 	
-	public static String BINOMICA = "Binómica";
-	public static String POLAR = "Polar";
+	public static final String BINOMICA = "Binómica";
+	public static final String POLAR = "Polar";
 	
-	public static String PRIMER_OPERANDO = "Primer operando";
-	public static String SEGUNDO_OPERANDO = "Segundo operando";
-	public static String RESULTADO = "Resultado";
+	public static final String NUMERO_COMPLEJO = "Numero complejo";
+	public static final String PRIMER_OPERANDO = "Primer operando";
+	public static final String SEGUNDO_OPERANDO = "Segundo operando";
+	public static final String RESULTADO = "Resultado";
 	
-	public static String BASE = "Base";
-	public static String EXPONENTE = "Exponente";
-	public static String RADICANDO = "Radicando";
-	public static String INDICE = "Indice";
+	public static final String BASE = "Base";
+	public static final String EXPONENTE = "Exponente";
+	public static final String RADICANDO = "Radicando";
+	public static final String INDICE = "Indice";
 	
-	public static String PRIMERA_FUNCION = "Primera funcion sinusoidal";
-	public static String SEGUNDA_FUNCION = "Segunda funcion sinusoidal";
+	public static final String PRIMERA_FUNCION = "Primera funcion sinusoidal";
+	public static final String SEGUNDA_FUNCION = "Segunda funcion sinusoidal";
 	
-	public static String SENO = "sen";
-	public static String COSENO = "cos";
+	public static final String SENO = "sen";
+	public static final String COSENO = "cos";
 	
-	public static String MODULO = "Mod";
-	public static String FASE = "Fase";
-	public static String MAS_I = "+ i";
+	public static final String MODULO = "Mod";
+	public static final String FASE = "Fase";
+	public static final String MAS_I = "+ i";
 	
-	public static String BARRA = " / ";
-	public static String ABRE_PARENTESIS = "(";
-	public static String CIERRA_PARENTESIS = ")";
-	public static String T_MAS = "t + ";
+	public static final String BARRA = " / ";
+	public static final String ABRE_PARENTESIS = "(";
+	public static final String CIERRA_PARENTESIS = ")";
+	public static final String T_MAS = "t + ";
 	
-	public static String SUMA = "+";
-	public static String RESTA = "-";
-	public static String PRODUCTO = "x";
-	public static String COCIENTE = "/";
-	public static String POTENCIA = "^";
-	public static String RAIZ = "root";
-	
+	public static final String SUMA = "+";
+	public static final String RESTA = "-";
+	public static final String PRODUCTO = "x";
+	public static final String COCIENTE = "/";
+	public static final String POTENCIA = "^";
+	public static final String RAIZ = "root";
 	
 }
