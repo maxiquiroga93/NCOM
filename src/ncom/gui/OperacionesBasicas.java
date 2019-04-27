@@ -54,6 +54,7 @@ public class OperacionesBasicas {
 		textoPrimerNumeroPolarModulo.setColumns(10);
 		textoPrimerNumeroPolarModulo.setBounds(60, 70, 50, 20);
 		panel.add(textoPrimerNumeroPolarModulo);
+		
 		final JLabel lblFase1 = new JLabel(Textos.FASE);
 		lblFase1.setBounds(120, 70, 30, 20);
 		panel.add(lblFase1);
