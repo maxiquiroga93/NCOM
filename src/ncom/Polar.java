@@ -1,19 +1,25 @@
 package ncom;
 
+
+import java.util.ArrayList;
+
 public class Polar implements Complejo {
 	
 	double modulo=0;
 	double argumento=0;
+	boolean primitiva = false;
 	
 	public Polar(final double modulo, final double argumento) {
 		this.modulo = modulo;
 		this.argumento = argumento;
+		this.primitiva = false;
 	}
 	
 	public Polar (final Binario binario) {
 		final Polar polar = binario.aPolar();
 		this.modulo = polar.getModulo();
 		this.argumento = polar.getArgumento();
+		this.primitiva = false;
 	}
 	
 	public void print() {
@@ -82,8 +88,24 @@ public class Polar implements Complejo {
 	}
 	
 	@Override
-	public Complejo raiz(final Integer indice) {
-		return this;//TODO
+	public ArrayList<Complejo> raiz(final Integer indice) {
+		
+		ArrayList <Complejo> resultado = new ArrayList<Complejo>(indice);
+		
+		double moduloRaiz = Math.pow(this.modulo, 1/indice);
+		
+		int k;
+		for(k=0;k<indice;k++) {
+			Polar raiz = new Polar(moduloRaiz, (this.argumento +2*k*Math.PI)/indice);
+			
+			if (Utils.mcd(k, indice)==1) {
+				raiz.primitiva = true;
+			}
+			
+			resultado.add(raiz);
+		}
+		
+		return resultado;
 	}
 	
 	private Double corregirArgumento(final Double argumento) {

@@ -2,6 +2,7 @@ package ncom.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -128,10 +129,10 @@ public class OperacionesAvanzadas {
 				final Complejo radicando = radioBaseBinomica.isSelected() ?  crearBinario(textoBaseBinomicaReal,textoBaseBinomicaImaginaria) : crearPolar(textoBasePolarModulo,textoBasePolarFase);
 				final Integer indice = parsearEntero(textoExponente);
 				if(radicando != null && indice != null) {
-					final Complejo raiz = radicando.raiz(indice);
+					final ArrayList<Complejo> raiz = radicando.raiz(indice);
 					if(raiz != null) {
-						rtaBinomica.setText(raiz.aBinario().toString());
-						rtaPolar.setText(raiz.aPolar().toString());
+						//rtaBinomica.setText(raiz.aBinario().toString()); A CORREGIR
+						//rtaPolar.setText(raiz.aPolar().toString());
 					} else {
 						rtaBinomica.setText("ERROR DIV/0");
 						rtaPolar.setText("ERROR DIV/0");

@@ -1,5 +1,7 @@
 package ncom;
 
+import java.util.ArrayList;
+
 public class Binario implements Complejo{
 
 	//Parte real de un numero complejo binario
@@ -155,9 +157,9 @@ public class Binario implements Complejo{
 	}
 	
 	@Override
-	public Complejo raiz(final Integer indice) {
+	public ArrayList<Complejo> raiz(final Integer indice) {
 		final Polar polar = new Polar(this);
-		return new Binario((Polar) polar.raiz(indice));
+		return polar.raiz(indice);
 	}
 	
 }
