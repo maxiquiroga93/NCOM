@@ -3,6 +3,7 @@ package ncom.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -48,21 +49,21 @@ public class OperacionesAvanzadas {
 		panel.add(radioBasePolar);
 
 		final JLabel lblMod = new JLabel(Textos.MODULO);
-		lblMod.setBounds(30, 70, 30, 20);
+		lblMod.setBounds(30, 70, 60, 20);
 		panel.add(lblMod);
 		
 		final JTextField textoBasePolarModulo = new JTextField();
 		textoBasePolarModulo.setColumns(10);
-		textoBasePolarModulo.setBounds(60, 70, 50, 20);
+		textoBasePolarModulo.setBounds(85, 70, 50, 20);
 		panel.add(textoBasePolarModulo);
 		
 		final JLabel lblFase = new JLabel(Textos.FASE);
-		lblFase.setBounds(120, 70, 30, 20);
+		lblFase.setBounds(140, 70, 45, 20);
 		panel.add(lblFase);
 		
 		final JTextField textoBasePolarFase = new JTextField();
 		textoBasePolarFase.setColumns(10);
-		textoBasePolarFase.setBounds(150, 70, 50, 20);
+		textoBasePolarFase.setBounds(180, 70, 50, 20);
 		panel.add(textoBasePolarFase);
 
 		final ButtonGroup radioBase = new ButtonGroup();    
@@ -95,7 +96,7 @@ public class OperacionesAvanzadas {
 		panel.add(lblBinomica);
 		
 		final JLabel rtaBinomica = new JLabel();
-		rtaBinomica.setBounds(80, 240, 100, 25);
+		rtaBinomica.setBounds(80, 240, 80000, 25);
 		panel.add(rtaBinomica);
 		
 		final JLabel lblPolar = new JLabel(Textos.POLAR);
@@ -103,8 +104,16 @@ public class OperacionesAvanzadas {
 		panel.add(lblPolar);
 		
 		final JLabel rtaPolar = new JLabel();
-		rtaPolar.setBounds(80, 270, 100, 25);
+		rtaPolar.setBounds(80, 270, 80000, 25);
 		panel.add(rtaPolar);
+		
+		final JLabel lblRaices = new JLabel(Textos.RAICES_P);
+		lblRaices.setBounds(10, 300, 70, 25);
+		panel.add(lblRaices);
+		
+		final JLabel rtaRaices = new JLabel();
+		rtaRaices.setBounds(80, 300, 80000, 25);
+		panel.add(rtaRaices);
 		
 		agregarListenerClickRadio(radioBaseBinomica,textoBaseBinomicaReal,textoBaseBinomicaImaginaria,textoBasePolarModulo,textoBasePolarFase);
 		agregarListenerClickRadio(radioBasePolar,textoBasePolarModulo,textoBasePolarFase,textoBaseBinomicaReal,textoBaseBinomicaImaginaria);
@@ -117,9 +126,11 @@ public class OperacionesAvanzadas {
 					final Complejo potencia = base.elevarA(exponente);
 					rtaBinomica.setText(potencia.aBinario().toString());
 					rtaPolar.setText(potencia.aPolar().toString());
+					rtaRaices.setText("");
 				} else {
 					rtaBinomica.setText("ERROR");
 					rtaPolar.setText("ERROR");
+					rtaRaices.setText("ERROR");
 				}
 			}
 		});
@@ -131,15 +142,49 @@ public class OperacionesAvanzadas {
 				if(radicando != null && indice != null) {
 					final ArrayList<Complejo> raiz = radicando.raiz(indice);
 					if(raiz != null) {
-						//rtaBinomica.setText(raiz.aBinario().toString()); A CORREGIR
-						//rtaPolar.setText(raiz.aPolar().toString());
+						ListIterator<Complejo> iterador = raiz.listIterator();
+						String binario = "";
+						while(iterador.hasNext()) {
+							if (!iterador.hasPrevious()) {
+								binario = binario + iterador.next().aBinario().toString();
+							} else {
+								binario = binario + "|| " +iterador.next().aBinario().toString();
+							}
+						}
+						rtaBinomica.setText(binario);
+						
+						while(iterador.hasPrevious()) {
+							iterador.previous();
+						}
+						
+						String polar = "";
+						String primi ="";
+						while(iterador.hasNext()) {
+							if(!iterador.hasPrevious()) {
+								Polar i = (Polar) iterador.next();
+								polar = polar + i.toString();
+								if (i.isPrimitiva()) {
+									primi = primi + i.toString();
+								}
+							}else {
+								Polar i = (Polar) iterador.next();
+								polar = polar +"|| "+ i.toString();
+								if(i.isPrimitiva()) {
+									primi= primi +"|| " + i.toString();
+								}
+							}
+						}
+						rtaPolar.setText(polar);
+						rtaRaices.setText(primi);
 					} else {
 						rtaBinomica.setText("ERROR DIV/0");
 						rtaPolar.setText("ERROR DIV/0");
+						rtaRaices.setText("ERROR DIV/0");
 					}
 				} else {
 					rtaBinomica.setText("ERROR");
 					rtaPolar.setText("ERROR");
+					rtaRaices.setText("ERROR");
 				}
 			}
 		});

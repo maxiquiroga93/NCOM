@@ -19,7 +19,7 @@ public class Principal {
 			public void run() {
 				try {
 					final Principal window = new Principal();
-					window.frame.setSize(300, 450);
+					window.frame.setSize(900, 450);
 					window.frame.setVisible(true);
 				} catch (final Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class Principal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(10, 10, 1200, 600);
+		frame.setBounds(100, 100, 1200, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
 		
@@ -53,8 +53,8 @@ public class Principal {
 		tabbedPane.add(Textos.SUMA_FASORES,Fasores.crearPanel());
 			
 		frame.getContentPane().add(tabbedPane);  
-		frame.setSize(415,400);
-		frame.setVisible(true);  
+		//frame.setSize(850,400);
+		//frame.setVisible(true);  
 	}
 	
 }

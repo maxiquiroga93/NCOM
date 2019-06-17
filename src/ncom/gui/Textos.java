@@ -3,12 +3,13 @@ package ncom.gui;
 public class Textos {
 
 	public static final String CONVERTIR = "Convertir formatos";
-	public static final String OPERACIONES_BASICAS = "Operaciones básicas";
+	public static final String OPERACIONES_BASICAS = "Operaciones basicas";
 	public static final String OPERACIONES_AVANZADAS = "Operaciones avanzadas";
 	public static final String SUMA_FASORES = "Sumar fasores";
 	
-	public static final String BINOMICA = "Binómica";
+	public static final String BINOMICA = "Binomica";
 	public static final String POLAR = "Polar";
+	public static final String RAICES_P = "Primit.";
 	
 	public static final String NUMERO_COMPLEJO = "Numero complejo";
 	public static final String PRIMER_OPERANDO = "Primer operando";
@@ -26,7 +27,7 @@ public class Textos {
 	public static final String SENO = "sen";
 	public static final String COSENO = "cos";
 	
-	public static final String MODULO = "Mod";
+	public static final String MODULO = "Modulo";
 	public static final String FASE = "Fase";
 	public static final String MAS_I = "+ i";
 	

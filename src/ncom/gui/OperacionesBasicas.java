@@ -47,21 +47,21 @@ public class OperacionesBasicas {
 		panel.add(radioPrimerNumeroPolar);
 
 		final JLabel lblMod1 = new JLabel(Textos.MODULO);
-		lblMod1.setBounds(30, 70, 30, 20);
+		lblMod1.setBounds(30, 70, 60, 20);
 		panel.add(lblMod1);
 		
 		final JTextField textoPrimerNumeroPolarModulo = new JTextField();
 		textoPrimerNumeroPolarModulo.setColumns(10);
-		textoPrimerNumeroPolarModulo.setBounds(60, 70, 50, 20);
+		textoPrimerNumeroPolarModulo.setBounds(85, 70, 50, 20);
 		panel.add(textoPrimerNumeroPolarModulo);
 		
 		final JLabel lblFase1 = new JLabel(Textos.FASE);
-		lblFase1.setBounds(120, 70, 30, 20);
+		lblFase1.setBounds(140, 70, 45, 20);
 		panel.add(lblFase1);
 		
 		final JTextField textoPrimerNumeroPolarFase = new JTextField();
 		textoPrimerNumeroPolarFase.setColumns(10);
-		textoPrimerNumeroPolarFase.setBounds(150, 70, 50, 20);
+		textoPrimerNumeroPolarFase.setBounds(180, 70, 50, 20);
 		panel.add(textoPrimerNumeroPolarFase);
 
 		final ButtonGroup radioPrimerNumero = new ButtonGroup();    
@@ -95,21 +95,21 @@ public class OperacionesBasicas {
 		panel.add(radioSegundoNumeroPolar);
 		
 		final JLabel lblMod2 = new JLabel(Textos.MODULO);
-		lblMod2.setBounds(30, 170, 30, 20);
+		lblMod2.setBounds(30, 170, 60, 20);
 		panel.add(lblMod2);
 		
 		final JTextField textoSegundoNumeroPolarModulo = new JTextField();
 		textoSegundoNumeroPolarModulo.setColumns(10);
-		textoSegundoNumeroPolarModulo.setBounds(60, 170, 50, 20);
+		textoSegundoNumeroPolarModulo.setBounds(85, 170, 50, 20);
 		panel.add(textoSegundoNumeroPolarModulo);
 		
 		final JLabel lblFase2 = new JLabel(Textos.FASE);
-		lblFase2.setBounds(120, 170, 30, 20);
+		lblFase2.setBounds(140, 170, 45, 20);
 		panel.add(lblFase2);
 		
 		final JTextField textoSegundoNumeroPolarFase = new JTextField();
 		textoSegundoNumeroPolarFase.setColumns(10);
-		textoSegundoNumeroPolarFase.setBounds(150, 170, 50, 20);
+		textoSegundoNumeroPolarFase.setBounds(180, 170, 50, 20);
 		panel.add(textoSegundoNumeroPolarFase);
 		
 		final ButtonGroup radioSegundoNumero = new ButtonGroup();    
@@ -141,7 +141,7 @@ public class OperacionesBasicas {
 		panel.add(lblBinomica);
 		
 		final JLabel rtaBinomica = new JLabel();
-		rtaBinomica.setBounds(80, 280, 100, 25);
+		rtaBinomica.setBounds(80, 280, 800, 25);
 		panel.add(rtaBinomica);
 		
 		final JLabel lblPolar = new JLabel(Textos.POLAR);
@@ -149,7 +149,7 @@ public class OperacionesBasicas {
 		panel.add(lblPolar);
 		
 		final JLabel rtaPolar = new JLabel();
-		rtaPolar.setBounds(80, 310, 100, 25);
+		rtaPolar.setBounds(80, 310, 800, 25);
 		panel.add(rtaPolar);
 		
 		agregarListenerClickRadio(radioPrimerNumeroBinomica,textoPrimerNumeroBinomicaReal,textoPrimerNumeroBinomicaImaginaria,textoPrimerNumeroPolarModulo,textoPrimerNumeroPolarFase);

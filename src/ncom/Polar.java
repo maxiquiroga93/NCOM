@@ -9,6 +9,8 @@ public class Polar implements Complejo {
 	double argumento=0;
 	boolean primitiva = false;
 	
+	
+
 	public Polar(final double modulo, final double argumento) {
 		this.modulo = modulo;
 		this.argumento = argumento;
@@ -36,9 +38,12 @@ public class Polar implements Complejo {
 	}
 
 	public Binario aBinario() {
-		
+		double imaginaria = 0;		
 		final double real = modulo*Math.cos(argumento);
-		final double imaginaria = modulo*Math.sin(argumento);
+		if(argumento != Math.PI) {
+			imaginaria = modulo*Math.sin(argumento);
+		}
+
 		
 		//Quizas haya que corregir el argumento antes
 		
@@ -53,6 +58,9 @@ public class Polar implements Complejo {
 		return this.argumento;
 	}
 	
+	public boolean isPrimitiva() {
+		return primitiva;
+	}
 	//-------------------------OPERACIONES------------------------------------
 	
 	@Override
@@ -108,12 +116,36 @@ public class Polar implements Complejo {
 		return resultado;
 	}
 	
-	private Double corregirArgumento(final Double argumento) {
-		Double arg = argumento;
-		while(arg >= 2*Math.PI) {
-			arg = argumento - 2*Math.PI;
+private double corregirArgumento(double argumento) {
+		
+		//Si es menor a 0 suma 2pi hasta llegar al primer giro, si es mayor, resta.
+		if(argumento < 0) {
+			argumento = corregirArgumentoMenor(argumento);
+		}else if(argumento > 2*Math.PI) {
+			argumento = corregirArgumentoMayor(argumento);
 		}
-		return arg;
+		return argumento;
+	}
+	
+	
+	//Si es menor a 0, corrige cuadrante
+	private double corregirArgumentoMenor(double argumento) {
+		//Suma 2pi hasta que sea mayor a 0
+		while(argumento < 0) {
+			argumento = argumento + 2*Math.PI;
+		}
+		
+		return argumento;
+	}
+	
+	//Si es mayor a 2pi, corrige cuadrante
+	private double corregirArgumentoMayor(double argumento) {
+		//Resta 2pi hasta que sea menor que 2pi
+		while(argumento > 2*Math.PI) {
+			argumento = argumento - 2*Math.PI;
+		}
+		
+		return argumento;
 	}
 	
 }

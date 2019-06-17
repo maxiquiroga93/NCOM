@@ -40,7 +40,7 @@ public class Fasor implements Complejo {
 			return "Las frecuencias deben ser iguales";
 		}
 		
-		if(!sumando.getTipo().equals("cos")|| !sumando.getTipo().equals("sen")) {
+		if(!sumando.getTipo().equals("cos") && !sumando.getTipo().equals("sen")) {
 			return "La funcion a sumar debe ser sinusoidal";
 		}
 		
@@ -52,7 +52,7 @@ public class Fasor implements Complejo {
 			
 			Binario resultado = (Binario) this.aBinario().sumar(sumando.aBinario());
 			
-			return "El resultado es: " + resultado.aPolar().getModulo() + this.tipo + "(" + this.frecuencia + "t+" + resultado.aPolar().getArgumento(); 
+			return "El resultado es: " + resultado.aPolar().getModulo() + " " + this.tipo + " " + "(" + this.frecuencia + "t+" + resultado.aPolar().getArgumento() + ")"; 
 		}
 		
 		if(this.tipo.equals("sen")) {
@@ -63,9 +63,9 @@ public class Fasor implements Complejo {
 			
 			Binario resultado = (Binario) this.aBinario().sumar(sumando.aBinario());
 			
-			return "El resultado es: " + resultado.aPolar().getModulo() + this.tipo + "(" + this.frecuencia + "t+" + resultado.aPolar().getArgumento();
+			return "El resultado es: " + resultado.aPolar().getModulo() + " " + this.tipo + " " + "(" + this.frecuencia + "t+" + resultado.aPolar().getArgumento() + ")";
 		}
-		return "La funcion a sumar debe ser sinusoidal";
+		return "La funcion a sumar debe ser sinusoidal AMIGO";
 	}
 
 	@Override

@@ -47,21 +47,21 @@ public class Conversor {
 		panel.add(radioNumeroComplejoPolar);
 
 		final JLabel lblMod = new JLabel(Textos.MODULO);
-		lblMod.setBounds(30, 70, 30, 20);
+		lblMod.setBounds(30, 70, 60, 20);
 		panel.add(lblMod);
 		
 		final JTextField textoNumeroComplejoPolarModulo = new JTextField();
 		textoNumeroComplejoPolarModulo.setColumns(10);
-		textoNumeroComplejoPolarModulo.setBounds(60, 70, 50, 20);
+		textoNumeroComplejoPolarModulo.setBounds(85, 70, 50, 20);
 		panel.add(textoNumeroComplejoPolarModulo);
 		
 		final JLabel lblFase = new JLabel(Textos.FASE);
-		lblFase.setBounds(120, 70, 30, 20);
+		lblFase.setBounds(140, 70, 45, 20);
 		panel.add(lblFase);
 		
 		final JTextField textoNumeroComplejoPolarFase = new JTextField();
 		textoNumeroComplejoPolarFase.setColumns(10);
-		textoNumeroComplejoPolarFase.setBounds(150, 70, 50, 20);
+		textoNumeroComplejoPolarFase.setBounds(180, 70, 50, 20);
 		panel.add(textoNumeroComplejoPolarFase);
 
 		final ButtonGroup radioBase = new ButtonGroup();    
@@ -81,7 +81,7 @@ public class Conversor {
 		panel.add(lblBinomica);
 		
 		final JLabel rtaBinomica = new JLabel();
-		rtaBinomica.setBounds(80, 180, 100, 25);
+		rtaBinomica.setBounds(80, 180, 800, 25);
 		panel.add(rtaBinomica);
 		
 		final JLabel lblPolar = new JLabel(Textos.POLAR);
@@ -89,7 +89,7 @@ public class Conversor {
 		panel.add(lblPolar);
 		
 		final JLabel rtaPolar = new JLabel();
-		rtaPolar.setBounds(80, 210, 100, 25);
+		rtaPolar.setBounds(80, 210, 800, 25);
 		panel.add(rtaPolar);
 		
 		agregarListenerClickRadio(radioNumeroComplejoBinomica,textoNumeroComplejoBinomicaReal,textoNumeroComplejoBinomicaImaginaria,textoNumeroComplejoPolarModulo,textoNumeroComplejoPolarFase);
